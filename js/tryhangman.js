@@ -1,11 +1,12 @@
 var words = ['computer', 'zion', 'virus', 'geek', 'scientist','matrix'];
-
+var newWord="",
+	totalIndex;
 function chooseWord () {
     return words[Math.floor(Math.random() * words.length)];
 }
 
 function createSpan () {
-	var newWord = chooseWord().toUpperCase();
+	newWord = chooseWord().toUpperCase();
 	var len = newWord.length;
 	var span = "";
 	for (var i = 0; i < len; i++) {
@@ -20,7 +21,7 @@ function createSpan () {
 	console.log(newWord);
 	/*console.log(span);*/
 
-	var totalIndex = createIndex(newWord);
+	totalIndex = createIndex(newWord);
 	console.log(totalIndex);
 
 }
@@ -76,7 +77,37 @@ function keypad () {
 	console.log($keys);
 	console.log(html);
 	$keypad.html(html);
-
 }
 
 keypad();
+
+function questions () {
+	var source = $('#question-template').html();
+	var template = Handlebars.compile(source);
+	var content = {
+		clue : "",
+		chars : newWord.split("")
+	}
+	var html = template(content);
+	console.log($keys);
+	console.log(html);
+	$(".question").html(html);
+}
+
+
+questions();
+
+$(".keypad").on('click','.keys',function () {
+	var $val = $(this).data('value');
+	if(totalIndex.indexOf($val) > -1){
+		alert("exist");
+	}
+	for (var i = 0; i < totalIndex.length; i++) {
+		if(totalIndex[i].chars===$val){
+
+		}
+	};
+
+	console.log(totalIndex);
+	console.log("keys")
+})

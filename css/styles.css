@@ -31,7 +31,20 @@ body {
 	box-shadow: 0 0 10px #4A4FE8;
 }
   
-  body * {
+.hangman {
+  position: relative !important;
+  width: 20%;
+  display: inline-block;
+
+}
+
+@media screen and (max-width: 600px){
+  .hangman {
+    width: 50%;
+  }
+}
+
+.hangman * {
     position:absolute;
   }
   #head {
@@ -93,3 +106,8 @@ body {
     top:250px;
   }
 
+
+.hangmanWrapper .question {
+  /*float: right;*/
+  display: inline-block;
+}
