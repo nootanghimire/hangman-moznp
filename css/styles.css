@@ -51,8 +51,8 @@ body {
   }
 
 .hangman .parts {
-  top: 20px;
-  left: 100px;
+  top: 22px;
+  left: 130px;
 }  
 
 .hangman img {
@@ -66,39 +66,38 @@ body {
   #head {
     border:2px solid #000;
     border-radius:100%; 
-    height:100px;
-    width:100px;
+    height:60px;
+    width:60px;
     margin-left:30px;
   }
   
   #neck {
     border: 2px solid #000;
     width: 0.1px;
-    margin-left:78px;
-    height:105px;
-    top:110px;
+    margin-left:55px;
+    height:70px;
+    top:62px;
   }
   
   #hand1 {
     border: 2px solid #000;
     width:60px;
     /*margin-top:-200px;*/
-    margin-left:18px;
+    margin-left:0px;
     height:0.1px;
     transform-origin: 0% 0%;
     transform:  rotate(-20deg);
-    top:170px;
+    top:90px;
    }
 
   #hand2 {
     border: 2px solid #000;
     width:60px;
-    margin-top:-24px;
-    margin-left:78px;
+    margin-left:58px;
     height:0.1px;
     transform-origin: 0% 0%;
     transform: rotate(20deg);
-    top:170px;
+    top:70px;
   }
 
 
@@ -106,20 +105,20 @@ body {
     border: 2px solid #000;
     width: 80px;
     /*margin-top:100px;*/
-    margin-left:18px;
+    margin-left:-10px;
     transform-orign: 0% 0%;
     transform: rotate(-60deg);
-    top:250px;
+    top:170px;
   }
 
   #leg2 {
     border: 2px solid #000;
     width: 80px;
     margin-top:-34px;
-    margin-left:82px;
+    margin-left:62px;
     transform-origin: 0% 0%;
     transform: rotate(60deg);
-    top:250px;
+    top:170px;
   }
 
 
