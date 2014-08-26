@@ -1,6 +1,8 @@
 var words = ['computer', 'zion', 'virus', 'geek', 'scientist','matrix'];
-var newWord="",
-	totalIndex;
+var words = [['ccccc','this is device'],['ccc',"skjfjsdkjf"]];
+var newWord="", mainWord,
+	totalIndex,
+	countClick = 0;
 var total_hang_counter = 0;
 var man_order = ['head','neck','hand1','hand2','leg1','leg2'];
 function chooseWord () {
@@ -8,7 +10,8 @@ function chooseWord () {
 }
 
 function createSpan () {
-	newWord = chooseWord().toUpperCase();
+	mainWord = chooseWord();
+	newWord = mainWord[0].toUpperCase();
 	var len = newWord.length;
 	var span = "";
 	for (var i = 0; i < len; i++) {
@@ -87,7 +90,7 @@ function questions () {
 	var source = $('#question-template').html();
 	var template = Handlebars.compile(source);
 	var content = {
-		clue : "",
+		clue : mainWord[1],
 		chars : newWord.split("")
 	}
 	var html = template(content);
@@ -100,35 +103,54 @@ function questions () {
 questions();
 
 $(".keypad").on('click','.keys',function () {
-	var $val = $(this).data('value');
-	//disable the key.
-	var $flag = false;
-	for (var i = 0; i < totalIndex.length; i++) {
-		if(totalIndex[i].chars===$val){
-			$flag = true;
-		}
-	};
-	
-	if($flag){
-		//fill the places.
-		
-	} else {
-		//hang the man
-		hang_the_man();
-	}
 
+	var $val = $(this).data('value');
+	var $state = $(this).data('state');
+	var pos = 0;
+	//disable the key.
+	if (typeof $state === "undefined") {
+		var $flag = false;
+		for (var i = 0; i < totalIndex.length; i++) {
+			if(totalIndex[i].chars===$val){
+				$flag = true;
+				pos = i;
+				
+			}
+		};
+
+		if($flag){
+			console.log("smth smth");
+			fillThebox(pos,$val);
+			
+		} else {
+			//hang the man
+			hang_the_man();
+		}
+
+		$(this).data("state","smth");
+	}
+	
 	console.log(totalIndex);
 	console.log("keys")
 })
 
 function hang_the_man(){
-	if(total_hang_counter>=7) {
+	if(total_hang_counter>=6) {
 		alert("Man's hanged! :(");
-		
 	} else {
 		//display the div.
-		//alert(man_order[total_hang_counter])
-		$("#"+man_order[total_hang_counter]).show();
+		$(".parts #"+man_order[total_hang_counter]).show();
 		total_hang_counter++;
 	}
+}
+
+
+function fillThebox (pos,str) {
+	var len = totalIndex[pos].indexs.length;
+	for (var i = 0; i < len; i++) {
+		var spanNum = totalIndex[pos].indexs[i]+1;
+		console.log("here i am = "+spanNum+" str=="+str);
+		$('.question').find('.blankspace span:nth-child('+spanNum+')').text(str);
+	};
+	
 }

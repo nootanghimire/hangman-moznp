@@ -6,12 +6,17 @@
 <body>
 <div class="hangmanWrapper">
 <div class="hangman">
-	<div id="head"> </div>
-	<div id="neck"> </div>
-	<div id="hand1"> </div>
-	<div id="hand2"> </div>
-	<div id="leg1"> </div>
-	<div id="leg2"> </div>
+	
+	<div class="parts">
+		<div id="head"> </div>
+		<div id="neck"> </div>
+		<div id="hand1"> </div>
+		<div id="hand2"> </div>
+		<div id="leg1"> </div>
+		<div id="leg2"> </div>
+	</div>
+	<img src="hangman.png">
+	
 </div>
 <div class="question">
 	smth
@@ -37,7 +42,7 @@
 
 <script id="keypad-template" type="text/x-handlebars-template">
 	{{#each keys}}
-		<div class="{{this}} keys" data-value="{{this}}">{{this}}</div>
+		<div class="{{this}} keys" data-value="{{this}}" >{{this}}</div>
 	{{/each}}
 </script>
 

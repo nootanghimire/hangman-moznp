@@ -12,6 +12,7 @@ body {
 	bottom: 0;
 	width: 100%;
 	text-align: center;
+  z-index: 90;
 }
 
 .keypad .keys {
@@ -46,9 +47,20 @@ body {
 
 .hangman * {
     position:absolute;
+    z-index: 10;
   }
 
-.hangman div {
+.hangman .parts {
+  top: 20px;
+  left: 100px;
+}  
+
+.hangman img {
+  position: relative;
+  z-index: 9;
+}
+
+.hangman .parts div {
 	display:none;
 }
   #head {
@@ -113,5 +125,6 @@ body {
 
 .hangmanWrapper .question {
   /*float: right;*/
+  vertical-align: top;
   display: inline-block;
 }
