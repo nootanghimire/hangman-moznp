@@ -47,6 +47,10 @@ body {
 .hangman * {
     position:absolute;
   }
+
+.hangman div {
+	display:none;
+}
   #head {
     border:2px solid #000;
     border-radius:100%; 

@@ -1,6 +1,8 @@
 var words = ['computer', 'zion', 'virus', 'geek', 'scientist','matrix'];
 var newWord="",
 	totalIndex;
+var total_hang_counter = 0;
+var man_order = ['head','neck','hand1','hand2','leg1','leg2'];
 function chooseWord () {
     return words[Math.floor(Math.random() * words.length)];
 }
@@ -99,15 +101,34 @@ questions();
 
 $(".keypad").on('click','.keys',function () {
 	var $val = $(this).data('value');
-	if(totalIndex.indexOf($val) > -1){
-		alert("exist");
-	}
+	//disable the key.
+	var $flag = false;
 	for (var i = 0; i < totalIndex.length; i++) {
 		if(totalIndex[i].chars===$val){
-
+			$flag = true;
 		}
 	};
+	
+	if($flag){
+		//fill the places.
+		
+	} else {
+		//hang the man
+		hang_the_man();
+	}
 
 	console.log(totalIndex);
 	console.log("keys")
 })
+
+function hang_the_man(){
+	if(total_hang_counter>=7) {
+		alert("Man's hanged! :(");
+		
+	} else {
+		//display the div.
+		//alert(man_order[total_hang_counter])
+		$("#"+man_order[total_hang_counter]).show();
+		total_hang_counter++;
+	}
+}
