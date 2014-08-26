@@ -52,5 +52,31 @@ function createIndex (str) {
 	return objIndex;
 }
 
+
 // createIndex();
 createSpan();
+
+console.log("smth"+String.fromCharCode(65,66,67));
+
+
+var $keypad = $(".keypad");
+
+var $keys = [];
+for (var i = 0; i < 26; i++) {
+	$keys.push(String.fromCharCode(65+i));
+};
+
+function keypad () {
+	var source = $('#keypad-template').html();
+	var template = Handlebars.compile(source);
+	var content = {
+		keys : $keys
+	}
+	var html = template(content);
+	console.log($keys);
+	console.log(html);
+	$keypad.html(html);
+
+}
+
+keypad();

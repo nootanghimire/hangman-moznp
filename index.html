@@ -3,8 +3,21 @@
 	<title>hangman</title>
 </head>
 <body>
+mmm
+
+<div class="keypad">
+
+</div>
+
+
+<script id="keypad-template" type="text/x-handlebars-template">
+	{{#each keys}}
+		<div class="{{this}} keys" data-value="{{this}}">{{this}}</div>
+	{{/each}}
+</script>
 
 <script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/handlebars-v1.3.0.js"></script>
 <script src="js/tryhangman.js"></script>
 </body>
 </html>
