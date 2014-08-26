@@ -30,3 +30,66 @@ body {
 .keypad .keys:hover {
 	box-shadow: 0 0 10px #4A4FE8;
 }
+  
+  body * {
+    position:absolute;
+  }
+  #head {
+    border:2px solid #000;
+    border-radius:100%; 
+    height:100px;
+    width:100px;
+    margin-left:30px;
+  }
+  
+  #neck {
+    border: 2px solid #000;
+    width: 0.1px;
+    margin-left:78px;
+    height:105px;
+    top:110px;
+  }
+  
+  #hand1 {
+    border: 2px solid #000;
+    width:60px;
+    /*margin-top:-200px;*/
+    margin-left:18px;
+    height:0.1px;
+    transform-origin: 0% 0%;
+    transform:  rotate(-20deg);
+    top:170px;
+   }
+
+  #hand2 {
+    border: 2px solid #000;
+    width:60px;
+    margin-top:-24px;
+    margin-left:78px;
+    height:0.1px;
+    transform-origin: 0% 0%;
+    transform: rotate(20deg);
+    top:170px;
+  }
+
+
+  #leg1 {
+    border: 2px solid #000;
+    width: 80px;
+    /*margin-top:100px;*/
+    margin-left:18px;
+    transform-orign: 0% 0%;
+    transform: rotate(-60deg);
+    top:250px;
+  }
+
+  #leg2 {
+    border: 2px solid #000;
+    width: 80px;
+    margin-top:-34px;
+    margin-left:82px;
+    transform-origin: 0% 0%;
+    transform: rotate(60deg);
+    top:250px;
+  }
+
