@@ -1,5 +1,11 @@
-var words = ['computer', 'zion', 'virus', 'geek', 'scientist','matrix'];
-var words = [['ccccc','this is device'],['ccc',"skjfjsdkjf"]];
+var words = [['firefoxOs','web based mobile os by mozilla'],
+				['mozilla',"foundation bringing free browser, based on gecko"],
+				['bredientich','who invented javascript'],
+				['javascript','EMAScript popular in web'],
+				['nepal','country with triangular flag'],
+				['nepal','which country made largest human flag and broke the guniess world record']
+
+			];
 var newWord="", mainWord,
 	totalIndex,
 	countClick = 0;
@@ -137,6 +143,7 @@ $(".keypad").on('click','.keys',function () {
 function hang_the_man(){
 	if(total_hang_counter>=6) {
 		alert("Man's hanged! :(");
+		location.reload();
 	} else {
 		//display the div.
 		$(".parts #"+man_order[total_hang_counter]).show();
